@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""My square module"""
 
 
 class Square:
-    '''a class Square that defines a square by'''
+    """defines a square"""
 
     def __init__(self, size):
-        '''Private instance attribute'''
         self.__size = size
