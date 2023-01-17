@@ -1,91 +1,128 @@
-the ``text_indentation`` module
-===============================
+The ``5-text_indentation`` module
+============================
 
-using ``text_indentation``
---------------------------
+Using ``text_indentation``
+---------------------
 
-First import ``text_indentation``:
+Importing function from the module:
 
-	>>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-Test: normal text with all 3 characters:
+Printing a large message
 
-	>>> text_indentation("Hello? I am Tabitha. It's 10:00")
-	Hello?
-	<BLANKLINE>
-	I am Tabitha.
-	<BLANKLINE>
-	It's 10:
-	<BLANKLINE>
-	00
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+    Non autem hoc:
+    <BLANKLINE>
+    igitur ne illud quidem.
+    <BLANKLINE>
+    Fortasse id optimum, sed ubi illud:
+    <BLANKLINE>
+    Plus semper voluptatis?
+    <BLANKLINE>
+    Teneo, inquit, finem illi videri nihil dolere.
+    <BLANKLINE>
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
+    <BLANKLINE>
+    Si id dicis, vicimus.
+    <BLANKLINE>
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
+    <BLANKLINE>
+    Sin aliud quid voles, postea.
+    <BLANKLINE>
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
+    <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
-Test: non-string argument:
+Printing a word with spaces around
 
-	>>> text_indentation(42)
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation("    Holberton    ")
+    Holberton
 
-Test: none of the characters:
+Printing a word with a special character at the end
 
-	>>> text_indentation("Hello")
-	Hello
+    >>> text_indentation("    Hello    .")
+    Hello.
+    <BLANKLINE>
 
-Test: only special chars:
+Printing all special characters
 
-	>>> text_indentation("?.:")
-	?
-	<BLANKLINE>
-	.
-	<BLANKLINE>
-	:
-	<BLANKLINE>
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
 
-Test: special chars with spaces:
+Passing Node as a text
 
-	>>> text_indentation("  ?  :  .  ")
-	?
-	<BLANKLINE>
-	:
-	<BLANKLINE>
-	.
-	<BLANKLINE>
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: text must be a string
 
-Test: None as arg:
+Passing a number as a text
 
-	>>> text_indentation(None)
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation(10)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: text must be a string
 
-Test: spaces but no special chars:
+Printing a text with special characters
 
-	>>> text_indentation("Hello   ")
-	Hello
+    >>> text_indentation("Betty: Holberton? Python is. cool   ")
+    Betty:
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    Python is.
+    <BLANKLINE>
+    cool
 
-Test: spaces around special chars:
+Printing a char number
 
-	>>> text_indentation("Hello   ?")
-	Hello?
-	<BLANKLINE>
+    >>> text_indentation('2')
+    2
 
-Test: no arguments:
+Passing an empty string
 
-	>>> text_indentation()
-	Traceback (most recent call last):
-	...
-	TypeError: text_indentation() missing 1 required positional argument: 'text'
+    >>> text_indentation('    ')
 
-Test: NaN:
+Passing a new line as a text
 
-	>>> text_indentation(float('nan'))
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation('\n')
+    <BLANKLINE>
 
-Test: to infinity and beyond!:
+Passing a special character and some special characters
 
-	>>> text_indentation(float('inf'))
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation('\n.\n?\n:')
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+Passing a text with spaces and one new line
+
+    >>> text_indentation("   \n")
+    <BLANKLINE>
+
+Passing a text with spaces and one new line 2
+
+   >>> text_indentation("   \n   ")
+   <BLANKLINE>
+
+Passing a text with spaces and one new line 3
+
+   >>> text_indentation("\n   ")
+   <BLANKLINE>

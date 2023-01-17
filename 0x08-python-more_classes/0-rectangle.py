@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""my rectangle module"""
-
-
 class Rectangle:
-    """defines the rectangle"""
+    """ Empty class """
     pass

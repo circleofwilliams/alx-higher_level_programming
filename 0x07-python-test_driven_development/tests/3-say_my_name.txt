@@ -1,57 +1,54 @@
-the ``say_my_name`` module
-==========================
+The ``3-say_my_name`` module
+============================
 
-using ``say_my_name``
+Using ``say_my_name``
 ---------------------
 
-First import ``say_my_name``:
+Importing function from the module:
 
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Test: normal mode:
+Passing first_name and last_name correctly
 
-	>>> say_my_name("tabitha", "katz")
-	My name is tabitha katz
+    >>> say_my_name("Betty", "Holberton")
+    My name is Betty Holberton
 
-Test: just a first_name:
+Passing first_name and last_name correctly 2
 
-	>>> say_my_name("tabitha")
-	My name is tabitha 
+    >>> say_my_name("Luis")
+    My name is Luis 
 
-Test: bad first name:
+Passing None as the last_name
 
-	>>> say_my_name(42, "katz")
-	Traceback (most recent call last):
-	...
-	TypeError: first_name must be a string
+    >>> say_my_name("John", None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: last_name must be a string
 
-Test: no names:
+Passing None as the first_name
 
-	>>> say_my_name("", "")
-	My name is  
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: first_name must be a string
 
-Test: spaces for names:
+Passing a number as the first_name
 
-	>>> say_my_name("  ", "  ")
-	My name is      
+    >>> say_my_name(1)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: first_name must be a string
 
-Test: bad last_name:
+Passing a number as the last_name
 
-	>>> say_my_name("tabitha", 42)
-	Traceback (most recent call last):
-	...
-	TypeError: last_name must be a string
+    >>> say_my_name("Betty", 0)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: last_name must be a string
 
-Test: both names are ints:
+Missing two arguments
 
-	>>> say_my_name(42, 42)
-	Traceback (most recent call last):
-	...
-	TypeError: first_name must be a string
-
-Test: no args:
-
-	>>> say_my_name()
-	Traceback (most recent call last):
-	...
-	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+    >>> say_my_name()
+    Traceback (most recent call last):
+    	      ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'

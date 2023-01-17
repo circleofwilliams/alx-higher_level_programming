@@ -1,8 +1,15 @@
 #!/usr/bin/python3
-"""blocked class module"""
+"""
+
+This is a module that containts a clas that avoids
+dynmaically created attributes
+
+"""
 
 
 class LockedClass:
-    """object prevents dynamic attribute"""
-
     __slots__ = ['first_name']
+
+    def __init__(self):
+        """ Init method """
+        pass
